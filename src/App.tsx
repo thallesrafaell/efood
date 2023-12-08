@@ -1,10 +1,13 @@
+import Header from './components/HeaderHome'
 import { GlobalCSS } from './styles'
 
 function App() {
   return (
     <>
       <GlobalCSS />
-      <div>Hello, Wolrd</div>
+      <div>
+        <Header />
+      </div>
     </>
   )
 }
