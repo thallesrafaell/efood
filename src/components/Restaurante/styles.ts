@@ -1,18 +1,6 @@
 import styled from 'styled-components'
 import { Cores } from '../../styles'
 
-export const ContainerRestaurantes = styled.div`
-  max-width: 1024px;
-  width 100%;
-  margin: 0 auto;
-  padding: 80px 0 120px;
-`
-export const ListaRestaurantes = styled.ul`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 80px;
-  row-gap: 48px;
-`
 export const Card = styled.div`
   max-width: 472px;
   width: 100%;
@@ -63,4 +51,21 @@ export const BotaoSaibaMais = styled.a`
   text-align: center;
   font-weight: bold;
   text-decoration: none;
+`
+
+export const Tag = styled.div`
+  color: ${Cores.creme};
+  background-color: ${Cores.rosa};
+  padding: 4px 6px;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+`
+
+export const Infos = styled.div`
+  display: flex;
+  position: absolute;
+  top: 22px;
+  right: 16px;
+  gap: 8px;
 `
