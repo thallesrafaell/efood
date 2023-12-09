@@ -17,15 +17,16 @@ type Props = {
   nome: string
   avaliacao: number
   descricao: string
-  info: string
+  info: string[]
 }
 
 const Restaurante = ({ image, nome, avaliacao, descricao, info }: Props) => (
   <Card>
     <img src={image} alt={nome} />
     <Infos>
-      <Tag>{info}</Tag>
-      <Tag>{info}</Tag>
+      {info.map((tag) => (
+        <Tag key={tag}>{tag}</Tag>
+      ))}
     </Infos>
     <InfosRestaurante>
       <CabecalhoCard>

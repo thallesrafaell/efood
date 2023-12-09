@@ -4,7 +4,7 @@ export class ListasRestaurantes {
   nome: string
   avaliacao: number
   descricao: string
-  info: string
+  info: string[]
 
   constructor(
     id: number,
@@ -12,7 +12,7 @@ export class ListasRestaurantes {
     nome: string,
     avaliacao: number,
     descricao: string,
-    info: string
+    info: string[]
   ) {
     this.id = id
     this.image = image
