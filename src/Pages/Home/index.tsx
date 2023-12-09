@@ -62,11 +62,11 @@ const Lista: ListasRestaurantes[] = [
   }
 ]
 
-const HomeEfood = (
+const Home = (
   <>
     <Header />
     <Restaurantes restaurantes={Lista} />
   </>
 )
 
-export default HomeEfood
+export default Home
