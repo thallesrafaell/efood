@@ -5,7 +5,7 @@ import { ListasRestaurantes } from '../../models'
 import sushi from '../../assets/images/sushi.svg'
 import macarrao from '../../assets/images/macarrao.svg'
 
-const Lista: ListasRestaurantes[] = [
+export const Lista: ListasRestaurantes[] = [
   {
     id: 1,
     image: sushi,

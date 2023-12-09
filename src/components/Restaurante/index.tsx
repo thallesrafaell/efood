@@ -36,7 +36,7 @@ const Restaurante = ({ image, nome, avaliacao, descricao, info }: Props) => (
         </Avalicao>
       </CabecalhoCard>
       <DescricaoRestaurante>{descricao}</DescricaoRestaurante>
-      <BotaoSaibaMais href="#">Saiba mais</BotaoSaibaMais>
+      <BotaoSaibaMais to="/restaurante">Saiba mais</BotaoSaibaMais>
     </InfosRestaurante>
   </Card>
 )

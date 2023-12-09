@@ -4,7 +4,7 @@ export const Cores = {
   rosa: '#E66767',
   creme: '#FFEBD9',
   branco: '#FFFFFF',
-  preto: '#000000CC',
+  preto: '#00000080',
   cinza: '#4B4B4B'
 }
 

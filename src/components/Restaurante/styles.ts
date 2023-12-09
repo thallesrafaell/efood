@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { Cores } from '../../styles'
+import { Link } from 'react-router-dom'
 
 export const Card = styled.div`
   max-width: 472px;
@@ -44,7 +45,7 @@ export const DescricaoRestaurante = styled.p`
   margin-bottom: 16px;
 `
 
-export const BotaoSaibaMais = styled.a`
+export const BotaoSaibaMais = styled(Link)`
   padding: 4px 6px;
   background-color: ${Cores.rosa};
   color: ${Cores.creme};

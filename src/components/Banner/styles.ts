@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { Cores } from '../../styles'
 
 export const BannerBg = styled.div`
-  height: 28px;
+  height: 280px;
   position: relative;
   color: ${Cores.branco};
   background-size: cover;

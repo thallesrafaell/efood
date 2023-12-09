@@ -4,10 +4,13 @@ import face from '../../assets/images/facebook.svg'
 import twitter from '../../assets/images/twitter.svg'
 import fundo from '../../assets/images/fundo-cabecalho.png'
 import { Container, FooterEfood, RedesSociais } from './styles'
+import { Link } from 'react-router-dom'
 const Footer = () => (
   <FooterEfood style={{ backgroundImage: `url(${fundo})` }}>
     <Container>
-      <img src={logo} alt="" />
+      <Link to="/">
+        <img src={logo} alt="EFOOD" />
+      </Link>
       <RedesSociais>
         <img src={insta} alt="Instagram" />
         <img src={face} alt="Facebook" />

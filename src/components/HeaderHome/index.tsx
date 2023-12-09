@@ -1,10 +1,13 @@
 import { HeaderBg, Lema } from './styles'
 import fundo from '../../assets/images/fundo-cabecalho.png'
 import logo from '../../assets/images/efood.svg'
+import { Link } from 'react-router-dom'
 
 const Header = () => (
   <HeaderBg style={{ backgroundImage: `url(${fundo})` }}>
-    <img src={logo} alt="EFOOD" />
+    <Link to="/">
+      <img src={logo} alt="EFOOD" />
+    </Link>
     <Lema>Viva experiências gastronômicas no conforto da sua casa</Lema>
   </HeaderBg>
 )
