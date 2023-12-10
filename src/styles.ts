@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import styled, { createGlobalStyle } from 'styled-components'
 
 export const Cores = {
   rosa: '#E66767',
@@ -21,4 +21,10 @@ body {
   background-color: ${Cores.branco};
   color: ${Cores.rosa}
 }
+`
+
+export const Container = styled.div`
+  max-width: 1024px;
+  width: 100%;
+  margin: 0 auto;
 `

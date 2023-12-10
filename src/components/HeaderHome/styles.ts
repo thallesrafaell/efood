@@ -1,13 +1,16 @@
 import styled from 'styled-components'
-import { Cores } from '../../styles'
+import { Container, Cores } from '../../styles'
 
 export const HeaderBg = styled.div`
   width: 100%;
   height: 384px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 64px 0 40px;
+
+  ${Container} {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 64px 0 40px;
+  }
 `
 
 export const Lema = styled.p`

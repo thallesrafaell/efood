@@ -1,6 +1,6 @@
 import Prato from '../../components/Pratos'
 import { Cardapio as ClassCardapio } from '../../models'
-import { Container, ListaPratos } from './styles'
+import { ContainerCardapio, ListaPratos } from './styles'
 import pizza from '../../assets/images/pizza.png'
 
 const cardapio: ClassCardapio[] = [
@@ -49,7 +49,7 @@ const cardapio: ClassCardapio[] = [
 ]
 
 const Cardapio = () => (
-  <Container>
+  <ContainerCardapio>
     <ListaPratos>
       {cardapio.map((prato) => (
         <li key={prato.id}>
@@ -61,6 +61,6 @@ const Cardapio = () => (
         </li>
       ))}
     </ListaPratos>
-  </Container>
+  </ContainerCardapio>
 )
 export default Cardapio

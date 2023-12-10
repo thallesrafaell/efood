@@ -1,9 +1,7 @@
 import { styled } from 'styled-components'
+import { Container } from '../../styles'
 
-export const Container = styled.div`
-  max-width: 1024px;
-  width: 100%;
-  margin: 0 auto;
+export const ContainerCardapio = styled(Container)`
   padding: 56px 0 120px;
 `
 export const ListaPratos = styled.ul`

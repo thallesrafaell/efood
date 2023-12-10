@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Cores } from '../../styles'
+import { Container, Cores } from '../../styles'
 
 export const BannerBg = styled.div`
   height: 280px;
@@ -19,10 +19,7 @@ export const BannerBg = styled.div`
     background-color: ${Cores.preto};
   }
 `
-export const Container = styled.div`
-  max-width: 1024px;
-  width: 100%;
-  margin: 0 auto;
+export const ContainerBanner = styled(Container)`
   position: relative;
   z-index: 1;
   font-size: 32px;
