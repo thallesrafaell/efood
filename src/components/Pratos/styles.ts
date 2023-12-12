@@ -24,7 +24,8 @@ export const BotaoAdd = styled.button`
   color: ${Cores.rosa};
   padding: 4px auto;
   display: flex;
-  width: 100%;
+  width: 304px;
+  height: 24px;
   border: none;
   cursor: pointer;
   font-size: 14px;

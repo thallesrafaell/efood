@@ -1,4 +1,4 @@
-import { ContainerPerfil, Header } from './styles'
+import { ContainerPerfil, Header, LinkHeader } from './styles'
 import fundo from '../../assets/images/fundo-cabecalho.png'
 import logo from '../../assets/images/efood.svg'
 import { Link } from 'react-router-dom'
@@ -6,7 +6,9 @@ import { Link } from 'react-router-dom'
 const HeaderPerfil = () => (
   <Header style={{ backgroundImage: `url(${fundo})` }}>
     <ContainerPerfil>
-      <h2>Restaurantes</h2>
+      <LinkHeader to="/">
+        <span>Restaurantes</span>
+      </LinkHeader>
       <Link to="/">
         <img src={logo} alt="EFOOD" />
       </Link>
