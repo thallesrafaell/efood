@@ -20,25 +20,27 @@ type Props = {
   info: string[]
 }
 
-const Restaurante = ({ image, nome, avaliacao, descricao, info }: Props) => (
-  <Card>
-    <img src={image} alt={nome} />
-    <Infos>
-      {info.map((tag) => (
-        <Tag key={tag}>{tag}</Tag>
-      ))}
-    </Infos>
-    <InfosRestaurante>
-      <CabecalhoCard>
-        <Titulo>{nome}</Titulo>
-        <Avalicao>
-          {avaliacao} <img src={estrela} alt="estrela" />
-        </Avalicao>
-      </CabecalhoCard>
-      <DescricaoRestaurante>{descricao}</DescricaoRestaurante>
-      <BotaoSaibaMais to="/restaurante">Saiba mais</BotaoSaibaMais>
-    </InfosRestaurante>
-  </Card>
-)
+const Restaurante = ({ image, nome, avaliacao, descricao, info }: Props) => {
+  return (
+    <Card>
+      <img src={image} alt={nome} />
+      <Infos>
+        {info.map((tag) => (
+          <Tag key={tag}>{tag}</Tag>
+        ))}
+      </Infos>
+      <InfosRestaurante>
+        <CabecalhoCard>
+          <Titulo>{nome}</Titulo>
+          <Avalicao>
+            {avaliacao} <img src={estrela} alt="estrela" />
+          </Avalicao>
+        </CabecalhoCard>
+        <DescricaoRestaurante>{descricao}</DescricaoRestaurante>
+        <BotaoSaibaMais to="/restaurante">Saiba mais</BotaoSaibaMais>
+      </InfosRestaurante>
+    </Card>
+  )
+}
 
 export default Restaurante
