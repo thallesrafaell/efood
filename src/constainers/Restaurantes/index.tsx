@@ -6,26 +6,29 @@ import { RestauranteModel } from '../../Pages/Home'
 
 type Props = { restaurante: RestauranteModel[] }
 
-const Restaurantes = ({ restaurante }: Props) => (
-  <>
-    <ContainerRestaurantes>
-      <ListaRestaurantes>
-        {restaurante.map((restaurante) => (
-          <li key={restaurante.id}>
-            <Restaurante
-              id={restaurante.id}
-              destacado={restaurante.destacado}
-              capa={restaurante.capa}
-              titulo={restaurante.titulo}
-              avalicao={restaurante.avaliçao}
-              descricao={restaurante.descricao}
-              tipo={restaurante.tipo}
-            />
-          </li>
-        ))}
-      </ListaRestaurantes>
-    </ContainerRestaurantes>
-  </>
-)
+const Restaurantes = ({ restaurante }: Props) => {
+  console.log(restaurante)
+  return (
+    <>
+      <ContainerRestaurantes>
+        <ListaRestaurantes>
+          {restaurante.map((restaurantes) => (
+            <li key={restaurantes.id}>
+              <Restaurante
+                id={restaurantes.id}
+                destacado={restaurantes.destacado}
+                capa={restaurantes.capa}
+                titulo={restaurantes.titulo}
+                avaliacao={restaurantes.avaliacao}
+                descricao={restaurantes.descricao}
+                tipo={restaurantes.tipo}
+              />
+            </li>
+          ))}
+        </ListaRestaurantes>
+      </ContainerRestaurantes>
+    </>
+  )
+}
 
 export default Restaurantes

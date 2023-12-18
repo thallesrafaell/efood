@@ -16,7 +16,7 @@ type Props = {
   titulo: string
   destacado: boolean
   tipo: string
-  avalicao: number
+  avaliacao: number
   descricao: string
   capa: string
 }
@@ -26,10 +26,11 @@ const Restaurante = ({
   titulo,
   destacado,
   tipo,
-  avalicao,
+  avaliacao,
   descricao,
   capa
 }: Props) => {
+  console.log(avaliacao)
   return (
     <Card>
       <img src={capa} alt={titulo} />
@@ -41,7 +42,7 @@ const Restaurante = ({
         <CabecalhoCard>
           <Titulo>{titulo}</Titulo>
           <Avalicao>
-            {avalicao} <img src={estrela} alt="estrela" />
+            {avaliacao} <img src={estrela} alt="estrela" />
           </Avalicao>
         </CabecalhoCard>
         <DescricaoRestaurante>{descricao}</DescricaoRestaurante>

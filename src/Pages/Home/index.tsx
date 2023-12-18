@@ -8,7 +8,7 @@ export type RestauranteModel = {
   titulo: string
   destacado: boolean
   tipo: string
-  avaliçao: number
+  avaliacao: number
   descricao: string
   capa: string
   cardapio: [
@@ -30,7 +30,8 @@ const Home = () => {
       .then((res) => res.json())
       .then((res) => setRestaurantes(res))
   }, [])
-  console.log(restaurantes)
+  if (!restaurantes) return <h3>Carregando...</h3>
+
   return (
     <>
       <Header />
