@@ -28,7 +28,7 @@ export const ModalContent = styled(Container)`
 `
 
 export const ImagePrato = styled.img`
-  width: 290px;
+  width: 280px;
   height: 280px;
   margin-right: 32px;
   object-fit: cover;

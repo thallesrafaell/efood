@@ -12,32 +12,40 @@ import {
 import estrela from '../../assets/images/estrela.svg'
 
 type Props = {
-  id?: number
-  image: string
-  nome: string
-  avaliacao: number
+  id: number
+  titulo: string
+  destacado: boolean
+  tipo: string
+  avalicao: number
   descricao: string
-  info: string[]
+  capa: string
 }
 
-const Restaurante = ({ image, nome, avaliacao, descricao, info }: Props) => {
+const Restaurante = ({
+  id,
+  titulo,
+  destacado,
+  tipo,
+  avalicao,
+  descricao,
+  capa
+}: Props) => {
   return (
     <Card>
-      <img src={image} alt={nome} />
+      <img src={capa} alt={titulo} />
       <Infos>
-        {info.map((tag) => (
-          <Tag key={tag}>{tag}</Tag>
-        ))}
+        {destacado === true && <Tag>Destaque da semana</Tag>}
+        <Tag>{tipo}</Tag>
       </Infos>
       <InfosRestaurante>
         <CabecalhoCard>
-          <Titulo>{nome}</Titulo>
+          <Titulo>{titulo}</Titulo>
           <Avalicao>
-            {avaliacao} <img src={estrela} alt="estrela" />
+            {avalicao} <img src={estrela} alt="estrela" />
           </Avalicao>
         </CabecalhoCard>
         <DescricaoRestaurante>{descricao}</DescricaoRestaurante>
-        <BotaoSaibaMais to="/restaurante">Saiba mais</BotaoSaibaMais>
+        <BotaoSaibaMais to={`/restaurante/${id}`}>Saiba mais</BotaoSaibaMais>
       </InfosRestaurante>
     </Card>
   )

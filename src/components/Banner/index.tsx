@@ -1,12 +1,18 @@
+import { RestauranteModel } from '../../Pages/Home'
 import { BannerBg, ContainerBanner } from './styles'
-import fundo from '../../assets/images/italianabanner.png'
 
-const Banner = () => (
-  <BannerBg style={{ backgroundImage: `url(${fundo})` }}>
-    <ContainerBanner>
-      <p>Italiana</p>
-      <h2>La Dolce Vita Trattoria</h2>
-    </ContainerBanner>
-  </BannerBg>
-)
+type Props = {
+  restaurante: RestauranteModel
+}
+
+const Banner = ({ restaurante }: Props) => {
+  return (
+    <BannerBg style={{ backgroundImage: `url(${restaurante.capa})` }}>
+      <ContainerBanner>
+        <p>{restaurante.tipo}</p>
+        <h2>{restaurante.titulo}</h2>
+      </ContainerBanner>
+    </BannerBg>
+  )
+}
 export default Banner

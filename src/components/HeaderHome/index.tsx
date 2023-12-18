@@ -1,7 +1,8 @@
+import { Link } from 'react-router-dom'
+
 import { HeaderBg, Lema } from './styles'
 import fundo from '../../assets/images/fundo-cabecalho.png'
 import logo from '../../assets/images/efood.svg'
-import { Link } from 'react-router-dom'
 import { Container } from '../../styles'
 
 const Header = () => (

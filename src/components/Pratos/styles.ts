@@ -6,6 +6,11 @@ export const Card = styled.div`
   color: ${Cores.creme};
   padding: 8px;
   display: block;
+
+  > img {
+    width: 100%;
+    height: 168px;
+  }
 `
 
 export const Titulo = styled.h3`
