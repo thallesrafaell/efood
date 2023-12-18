@@ -33,7 +33,6 @@ const Cardapio = (restaurantes: Props) => {
     }).format(preco)
   }
 
-  console.log(restaurantes)
   return (
     <>
       <ContainerCardapio>

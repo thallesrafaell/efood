@@ -21,6 +21,9 @@ type Props = {
   capa: string
 }
 
+export const getDescription = (description: string, carateres: number) => {
+  return description.slice(0, carateres) + '...'
+}
 const Restaurante = ({
   id,
   titulo,
@@ -30,7 +33,6 @@ const Restaurante = ({
   descricao,
   capa
 }: Props) => {
-  console.log(avaliacao)
   return (
     <Card>
       <img src={capa} alt={titulo} />
@@ -45,7 +47,9 @@ const Restaurante = ({
             {avaliacao} <img src={estrela} alt="estrela" />
           </Avalicao>
         </CabecalhoCard>
-        <DescricaoRestaurante>{descricao}</DescricaoRestaurante>
+        <DescricaoRestaurante>
+          {getDescription(descricao, 291)}
+        </DescricaoRestaurante>
         <BotaoSaibaMais to={`/restaurante/${id}`}>Saiba mais</BotaoSaibaMais>
       </InfosRestaurante>
     </Card>
