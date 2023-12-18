@@ -71,9 +71,8 @@ const Cardapio = (restaurantes: Props) => {
               <h3>{pratoNome}</h3>
               <p>
                 {pratoDescricao}
-                <br />
-                <br />
-                Serve: de {pratoPorcao}
+
+                <span>Serve: de {pratoPorcao}</span>
               </p>
               <ModalButton>
                 Adicionar ao carrinho - {formatPrice(pratoPreco)}

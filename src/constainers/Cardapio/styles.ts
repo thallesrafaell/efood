@@ -47,8 +47,16 @@ export const Details = styled.div`
   }
 
   p {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     line-height: 22px;
     font-size: 14px;
+    width: 656px;
+    height: 176px;
+    span {
+      display: block;
+    }
   }
 `
 export const Modal = styled.div`
