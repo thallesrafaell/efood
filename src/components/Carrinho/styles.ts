@@ -11,7 +11,7 @@ export const CartContent = styled.div`
   z-index: 1;
   display: none;
 
-  .is-open {
+  &.is-open {
     display: flex;
   }
 

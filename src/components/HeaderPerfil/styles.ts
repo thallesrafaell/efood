@@ -12,6 +12,10 @@ export const ContainerPerfil = styled(Container)`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  p {
+    cursor: pointer;
+  }
 `
 export const LinkHeader = styled(Link)`
   text-decoration: none;
