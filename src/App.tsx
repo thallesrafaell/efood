@@ -2,6 +2,7 @@ import { BrowserRouter } from 'react-router-dom'
 import { GlobalCSS } from './styles'
 import Rotas from './route'
 import Footer from './components/Footer'
+import Cart from './components/Carrinho'
 function App() {
   return (
     <BrowserRouter>
@@ -10,6 +11,7 @@ function App() {
         <Rotas />
         <Footer />
       </div>
+      <Cart />
     </BrowserRouter>
   )
 }
