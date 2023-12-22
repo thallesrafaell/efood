@@ -2,6 +2,15 @@ import Header from '../../components/HeaderHome'
 import Restaurantes from '../../constainers/Restaurantes'
 import { useGetFeturedRestaurantsQuery } from '../../service/api'
 
+export type MenuItem = {
+  foto: string
+  preco: number
+  id: number
+  nome: string
+  descricao: string
+  porcao: string
+}
+
 export type RestauranteModel = {
   id: number
   titulo: string
@@ -10,16 +19,7 @@ export type RestauranteModel = {
   avaliacao: number
   descricao: string
   capa: string
-  cardapio: [
-    {
-      foto: string
-      preco: number
-      id: number
-      nome: string
-      descricao: string
-      porcao: string
-    }
-  ]
+  cardapio: MenuItem[]
 }
 
 const Home = () => {
