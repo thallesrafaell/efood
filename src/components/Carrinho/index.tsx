@@ -1,5 +1,4 @@
 import { CartContent, CartDetails, Prices, PratosList, Prato } from './styles'
-import pizza from '../../assets/images/pizza.png'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootReducer } from '../../store'
 import { close, remove } from '../../store/reducers/cart'

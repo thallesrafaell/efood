@@ -15,7 +15,6 @@ import {
 import close from '../../assets/images/close.png'
 import { useDispatch } from 'react-redux'
 import { add, open } from '../../store/reducers/cart'
-import Restaurante from '../../components/Restaurante'
 
 type Props = {
   restaurante: RestauranteModel
