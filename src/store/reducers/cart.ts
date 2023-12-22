@@ -17,6 +17,9 @@ const CartSlice = createSlice({
     add: (state, action: PayloadAction<MenuItem>) => {
       state.items.push(action.payload)
     },
+    remove: (state, action: PayloadAction<number>) => {
+      state.items = state.items.filter((item) => item.id !== action.payload)
+    },
     open: (state) => {
       state.isOpen = true
     },
@@ -26,5 +29,5 @@ const CartSlice = createSlice({
   }
 })
 
-export const { add, open, close } = CartSlice.actions
+export const { add, open, close, remove } = CartSlice.actions
 export default CartSlice.reducer

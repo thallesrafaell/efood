@@ -10,13 +10,7 @@ const Restaurantes = () => {
   const { id } = useParams()
 
   const { data: restaurante } = useGetFeturedRestaurantQuery(id!)
-  const [item, setItem] = useState<MenuItem[]>()
-
-  useEffect(() => {
-    const pratos = restaurante?.cardapio
-    setItem(pratos)
-  }, [id])
-
+  console.log(restaurante)
   if (!restaurante) return <h3>Carregando...</h3>
 
   return (

@@ -2,7 +2,7 @@ import { CartContent, CartDetails, Prices, PratosList, Prato } from './styles'
 import pizza from '../../assets/images/pizza.png'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootReducer } from '../../store'
-import { close } from '../../store/reducers/cart'
+import { close, remove } from '../../store/reducers/cart'
 import { formatPrice } from '../../constainers/Cardapio'
 
 const Cart = () => {
@@ -12,6 +12,12 @@ const Cart = () => {
 
   const closeCart = () => {
     dispatch(close())
+  }
+
+  const getTotal = () => {
+    return items.reduce((acumulador, valorAtual) => {
+      return (acumulador += valorAtual.preco)
+    }, 0)
   }
 
   return (
@@ -26,13 +32,13 @@ const Cart = () => {
                 <h3>{item.nome}</h3>
                 <span>{formatPrice(item.preco)}</span>
               </div>
-              <button></button>
+              <button onClick={() => dispatch(remove(item.id))}></button>
             </Prato>
           ))}
         </PratosList>
         <Prices>
           <p>Valor total</p>
-          <span>R$ 182,70</span>
+          <span>{formatPrice(getTotal())}</span>
         </Prices>
         <button>Continuar com a entrega</button>
       </CartDetails>
