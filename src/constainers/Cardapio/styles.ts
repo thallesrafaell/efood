@@ -1,5 +1,5 @@
 import { styled } from 'styled-components'
-import { Container, Cores } from '../../styles'
+import { Container, Cores, breakPoints } from '../../styles'
 
 export const ContainerCardapio = styled(Container)`
   padding: 56px 0 120px;
@@ -9,11 +9,18 @@ export const ListaPratos = styled.ul`
   grid-template-columns: 1fr 1fr 1fr;
   column-gap: 32px;
   row-gap: 32px;
+
+  @media (max-width: ${breakPoints.desktop}) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media (max-width: ${breakPoints.tablet}) {
+    grid-template-columns: 1fr;
+  }
 `
 export const ModalContent = styled(Container)`
   position: relative;
   z-index: 1;
-  height: 344px;
+  height: 500px;
   padding: 32px;
   background-color: ${Cores.rosa};
   color: ${Cores.branco};
@@ -32,9 +39,19 @@ export const ImagePrato = styled.img`
   height: 280px;
   margin-right: 32px;
   object-fit: cover;
+
+  @media (max-width: ${breakPoints.tablet}) {
+    width: 100%;
+    height: 120px;
+    margin-bottom: 15px;
+  }
 `
 export const Content = styled.div`
   display: flex;
+
+  @media (max-width: ${breakPoints.tablet}) {
+    flex-direction: column;
+  }
 `
 export const Details = styled.div`
   display: flex;
@@ -56,6 +73,12 @@ export const Details = styled.div`
     height: 176px;
     span {
       display: block;
+    }
+    @media (max-width: ${breakPoints.desktop}) {
+      width: 100%;
+      span {
+        margin: 10px 0;
+      }
     }
   }
 `
@@ -87,11 +110,14 @@ export const Modal = styled.div`
 export const ModalButton = styled.button`
   padding: 4px 7px;
   font-weight: bold;
-  max-width: 218px;
+  max-width: 100%;
   background-color: ${Cores.creme};
   color: ${Cores.rosa};
   white-space: no-wrap;
   font-size: 14px;
   text-decoration: none;
   border: none;
+  @media (max-width: ${breakPoints.desktop}) {
+    margin-top: 30px;
+  }
 `

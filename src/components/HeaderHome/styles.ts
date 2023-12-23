@@ -1,9 +1,13 @@
 import styled from 'styled-components'
-import { Container, Cores } from '../../styles'
+import { Container, Cores, breakPoints } from '../../styles'
 
 export const HeaderBg = styled.div`
   width: 100%;
   height: 384px;
+
+  @media (max-width: ${breakPoints.tablet}) {
+    height: 300px;
+  }
 
   ${Container} {
     display: flex;
@@ -22,4 +26,11 @@ export const Lema = styled.p`
   text-align: center;
   font-weight: Bolder;
   margin-top: 140px;
+
+  @media (max-width: ${breakPoints.tablet}) {
+    max-width: 300px;
+    font-size: 24px;
+    line-height: 30px;
+    margin-top: 40px;
+  }
 `

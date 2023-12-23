@@ -48,7 +48,7 @@ const Restaurante = ({
           </Avalicao>
         </CabecalhoCard>
         <DescricaoRestaurante>
-          {getDescription(descricao, 291)}
+          {getDescription(descricao, 250)}
         </DescricaoRestaurante>
         <BotaoSaibaMais to={`/restaurante/${id}`}>Saiba mais</BotaoSaibaMais>
       </InfosRestaurante>

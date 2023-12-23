@@ -29,7 +29,7 @@ export const BotaoAdd = styled.button`
   color: ${Cores.rosa};
   padding: 4px auto;
   display: flex;
-  width: 304px;
+  width: 100%;
   height: 24px;
   border: none;
   cursor: pointer;

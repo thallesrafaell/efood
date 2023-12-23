@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Cores } from '../../styles'
+import { Cores, breakPoints } from '../../styles'
 import fechar from '../../assets/images/lixeira.png'
 
 export const CartContent = styled.div`
@@ -69,7 +69,7 @@ export const Prato = styled.li`
 
   div {
     h3 {
-      font-size: 18px;
+      font-size: 12px;
       font-weight: bold;
       margin-bottom: 16px;
     }

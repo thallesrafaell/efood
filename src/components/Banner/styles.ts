@@ -31,5 +31,6 @@ export const ContainerBanner = styled(Container)`
 
   h2 {
     font-weight: Bolder;
+    font-size: 1em;
   }
 `

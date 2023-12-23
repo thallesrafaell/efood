@@ -12,6 +12,7 @@ export const Card = styled.div`
     display: block;
     width: 100%;
     height: 217px;
+    object-fit: cover;
   }
 `
 export const CabecalhoCard = styled.div`
