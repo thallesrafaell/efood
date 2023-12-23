@@ -20,10 +20,14 @@ export const ListaPratos = styled.ul`
 export const ModalContent = styled(Container)`
   position: relative;
   z-index: 1;
-  height: 500px;
+  height: 344px;
   padding: 32px;
   background-color: ${Cores.rosa};
   color: ${Cores.branco};
+
+  @media (max-width: ${breakPoints.tablet}) {
+    height: 500px;
+  }
 
   > img {
     display: block;
@@ -119,5 +123,9 @@ export const ModalButton = styled.button`
   border: none;
   @media (max-width: ${breakPoints.desktop}) {
     margin-top: 30px;
+  }
+
+  @media (max-width: 320px) {
+    margin-top: 70px;
   }
 `
