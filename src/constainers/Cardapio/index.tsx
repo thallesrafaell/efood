@@ -61,7 +61,6 @@ const Cardapio = (restaurante: Props) => {
     setPratoPreco(preco)
     setPrato(prato)
   }
-  console.log(prato)
 
   return (
     <>

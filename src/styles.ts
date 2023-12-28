@@ -24,7 +24,9 @@ export const GlobalCSS = createGlobalStyle`
 
 body {
   background-color: ${Cores.branco};
-  color: ${Cores.rosa}
+  color: ${Cores.rosa};
+  overflow-x: hidden;
+
 }
 `
 

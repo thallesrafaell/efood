@@ -114,7 +114,7 @@ export const Modal = styled.div`
 export const ModalButton = styled.button`
   padding: 4px 7px;
   font-weight: bold;
-  max-width: 100%;
+  max-width: 218px;
   background-color: ${Cores.creme};
   color: ${Cores.rosa};
   white-space: no-wrap;
@@ -127,5 +127,6 @@ export const ModalButton = styled.button`
 
   @media (max-width: 320px) {
     margin-top: 70px;
+    max-width: 100%;
   }
 `

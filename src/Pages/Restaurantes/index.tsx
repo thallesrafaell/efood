@@ -8,7 +8,7 @@ const Restaurantes = () => {
   const { id } = useParams()
 
   const { data: restaurante } = useGetFeturedRestaurantQuery(id!)
-  console.log(restaurante)
+
   if (!restaurante) return <h3>Carregando...</h3>
 
   return (

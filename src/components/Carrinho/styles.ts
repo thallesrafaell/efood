@@ -102,6 +102,12 @@ export const Container = styled.div`
   background-color: ${Cores.rosa};
   padding: 32px 8px 0px;
   color: ${Cores.creme};
+
+  .empty {
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+  }
 `
 
 export const Delivery = styled.div`
@@ -124,6 +130,11 @@ export const InputGroup = styled.div`
     font-size: 14px;
     border: 1px solid ${Cores.creme};
     margin-top: 8px;
+    font-weight: bold;
+
+    &.error {
+      border: 1px solid red;
+    }
   }
 
   label {
@@ -175,6 +186,36 @@ export const Payment = styled.div`
 
 export const DeliveryDetails = styled.section`
   display: none;
+
+  &.is-visible {
+    display: block;
+  }
+`
+
+export const OrderConfimation = styled.section`
+  display: none;
+
+  h2 {
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  p {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    margin: 16px 0 24px;
+  }
+
+  button {
+    width: 100%;
+    padding: 4px;
+    color: ${Cores.rosa};
+    background-color: ${Cores.creme};
+    border: none;
+    font-weight: bold;
+    font-size: 14px;
+  }
 
   &.is-visible {
     display: block;

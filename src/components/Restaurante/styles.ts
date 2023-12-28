@@ -18,7 +18,7 @@ export const Card = styled.div`
 export const CabecalhoCard = styled.div`
   display: flex;
   justify-content: space-between;
-  aling-items: center;
+  align-items: center;
   margin-bottom: 16px;
 `
 export const InfosRestaurante = styled.div`
