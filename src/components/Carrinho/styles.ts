@@ -24,12 +24,11 @@ export const CartContent = styled.div`
 `
 
 export const CartDetails = styled.div`
-  height: 100%;
-  max-width: 360px;
-  width: 100%;
-  background-color: ${Cores.rosa};
-  padding: 32px 8px 0px;
-  color: ${Cores.creme};
+  display: block;
+
+  &.is-closed {
+    display: none;
+  }
 
   button {
     background-color: ${Cores.creme};
@@ -94,5 +93,90 @@ export const Prato = styled.li`
     bottom: 8px;
     right: 8px;
     cursor: pointer;
+  }
+`
+export const Container = styled.div`
+  height: 100%;
+  max-width: 360px;
+  width: 100%;
+  background-color: ${Cores.rosa};
+  padding: 32px 8px 0px;
+  color: ${Cores.creme};
+`
+
+export const Delivery = styled.div`
+  h2 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 16px;
+  }
+  display: block;
+`
+
+export const InputGroup = styled.div`
+  input {
+    display: block;
+    width: 100%;
+    height: 32px;
+    background-color: ${Cores.creme};
+    padding: 8px;
+    color: black;
+    font-size: 14px;
+    border: 1px solid ${Cores.creme};
+    margin-top: 8px;
+  }
+
+  label {
+    font-size: 14px;
+    font-weight: bold;
+  }
+`
+
+export const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+
+  .margin-top {
+    margin-top: 8px;
+  }
+
+  .display-flex {
+    display: flex;
+    column-gap: 34px;
+
+    ${InputGroup} {
+      width: 155px;
+    }
+  }
+`
+export const ButtonsGroup = styled.div`
+  margin-top: 24px;
+
+  button {
+    display: block;
+    width: 100%;
+    padding: 4px 0;
+    border: none;
+    cursor: pointer;
+    background-color: ${Cores.creme};
+    color: ${Cores.rosa};
+    font-size: 14px;
+    font-weight: bold;
+  }
+`
+
+export const Payment = styled.div`
+  display: none;
+
+  &.is-visible {
+    display: block;
+  }
+`
+
+export const DeliveryDetails = styled.section`
+  display: none;
+
+  &.is-visible {
+    display: block;
   }
 `
