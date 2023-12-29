@@ -131,7 +131,6 @@ export const InputGroup = styled.div`
     border: 1px solid ${Cores.creme};
     margin-top: 8px;
     font-weight: bold;
-
     &.error {
       border: 1px solid red;
     }

@@ -1,20 +1,12 @@
 import { useState } from 'react'
+import { useDispatch } from 'react-redux'
 
 import { MenuItem, RestauranteModel } from '../../Pages/Home'
 import Prato from '../../components/Pratos'
-import {
-  ContainerCardapio,
-  Content,
-  Details,
-  ImagePrato,
-  ListaPratos,
-  Modal,
-  ModalButton,
-  ModalContent
-} from './styles'
-import close from '../../assets/images/close.png'
-import { useDispatch } from 'react-redux'
 import { add, open } from '../../store/reducers/cart'
+
+import close from '../../assets/images/close.png'
+import * as S from './styles'
 
 type Props = {
   restaurante: RestauranteModel
@@ -38,10 +30,12 @@ const Cardapio = (restaurante: Props) => {
 
   const dispatch = useDispatch()
 
-  const addToCart = (prato: any) => {
-    dispatch(add(prato))
-    dispatch(open())
-    setModalAberto(false)
+  const addToCart = (prato: MenuItem) => {
+    if (prato) {
+      dispatch(add(prato))
+      dispatch(open())
+      setModalAberto(false)
+    }
   }
 
   const openModal = (
@@ -64,8 +58,8 @@ const Cardapio = (restaurante: Props) => {
 
   return (
     <>
-      <ContainerCardapio>
-        <ListaPratos>
+      <S.ContainerCardapio>
+        <S.ListaPratos>
           {restaurante.restaurante.cardapio.map((prato) => (
             <li
               key={prato.id}
@@ -88,35 +82,35 @@ const Cardapio = (restaurante: Props) => {
               />
             </li>
           ))}
-        </ListaPratos>
-      </ContainerCardapio>
-      <Modal
+        </S.ListaPratos>
+      </S.ContainerCardapio>
+      <S.Modal
         key={restaurante.restaurante.id}
         className={modalAberto ? 'visible' : ''}
       >
-        <ModalContent>
+        <S.ModalContent>
           <img
             src={close}
             alt="icone fechar"
             onClick={() => setModalAberto(false)}
           />
-          <Content>
-            <ImagePrato src={pratoFoto} alt="Prato" />
-            <Details>
+          <S.Content>
+            <S.ImagePrato src={pratoFoto} alt="Prato" />
+            <S.Details>
               <h3>{pratoNome}</h3>
               <p>
                 {pratoDescricao}
 
                 <span>Serve: de {pratoPorcao}</span>
               </p>
-              <ModalButton onClick={() => addToCart(prato)}>
+              <S.ModalButton onClick={() => addToCart(prato!)}>
                 Adicionar ao carrinho - {formatPrice(pratoPreco)}
-              </ModalButton>
-            </Details>
-          </Content>
-        </ModalContent>
+              </S.ModalButton>
+            </S.Details>
+          </S.Content>
+        </S.ModalContent>
         <div className="overlay" onClick={() => setModalAberto(false)}></div>
-      </Modal>
+      </S.Modal>
     </>
   )
 }

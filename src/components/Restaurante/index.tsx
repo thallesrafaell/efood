@@ -1,15 +1,6 @@
-import {
-  Avalicao,
-  BotaoSaibaMais,
-  CabecalhoCard,
-  Card,
-  DescricaoRestaurante,
-  Infos,
-  InfosRestaurante,
-  Tag,
-  Titulo
-} from './styles'
 import estrela from '../../assets/images/estrela.svg'
+
+import * as S from './styles'
 
 type Props = {
   id: number
@@ -34,25 +25,27 @@ const Restaurante = ({
   capa
 }: Props) => {
   return (
-    <Card>
+    <S.Card>
       <img src={capa} alt={titulo} />
-      <Infos>
-        {destacado === true && <Tag>Destaque da semana</Tag>}
-        <Tag>{tipo}</Tag>
-      </Infos>
-      <InfosRestaurante>
-        <CabecalhoCard>
-          <Titulo>{titulo}</Titulo>
-          <Avalicao>
+      <S.Infos>
+        {destacado === true && <S.Tag>Destaque da semana</S.Tag>}
+        <S.Tag>{tipo}</S.Tag>
+      </S.Infos>
+      <S.InfosRestaurante>
+        <S.CabecalhoCard>
+          <S.Titulo>{titulo}</S.Titulo>
+          <S.Avalicao>
             {avaliacao} <img src={estrela} alt="estrela" />
-          </Avalicao>
-        </CabecalhoCard>
-        <DescricaoRestaurante>
+          </S.Avalicao>
+        </S.CabecalhoCard>
+        <S.DescricaoRestaurante>
           {getDescription(descricao, 250)}
-        </DescricaoRestaurante>
-        <BotaoSaibaMais to={`/restaurante/${id}`}>Saiba mais</BotaoSaibaMais>
-      </InfosRestaurante>
-    </Card>
+        </S.DescricaoRestaurante>
+        <S.BotaoSaibaMais to={`/restaurante/${id}`}>
+          Saiba mais
+        </S.BotaoSaibaMais>
+      </S.InfosRestaurante>
+    </S.Card>
   )
 }
 

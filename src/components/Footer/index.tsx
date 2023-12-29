@@ -5,6 +5,7 @@ import insta from '../../assets/images/instagram.svg'
 import face from '../../assets/images/facebook.svg'
 import twitter from '../../assets/images/twitter.svg'
 import fundo from '../../assets/images/fundo-cabecalho.png'
+
 import { ContainerFooter, FooterEfood, RedesSociais } from './styles'
 
 const Footer = () => (

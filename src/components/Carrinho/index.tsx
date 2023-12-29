@@ -1,29 +1,15 @@
-import {
-  CartContent,
-  CartDetails,
-  Prices,
-  PratosList,
-  Prato,
-  Form,
-  InputGroup,
-  Container,
-  Delivery,
-  ButtonsGroup,
-  Payment,
-  DeliveryDetails,
-  OrderConfimation
-} from './styles'
-import { useDispatch, useSelector } from 'react-redux'
-import { RootReducer } from '../../store'
-import { close, remove, clear } from '../../store/reducers/cart'
-import { formatPrice } from '../../constainers/Cardapio'
 import { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import InputMask from 'react-input-mask'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
+
+import { RootReducer } from '../../store'
+import { close, remove, clear } from '../../store/reducers/cart'
 import { usePurchaseMutation } from '../../service/api'
-import { Navigate } from 'react-router-dom'
-import Home from '../../Pages/Home'
+
+import { formatPrice } from '../../constainers/Cardapio'
+import * as S from './styles'
 
 const Cart = () => {
   const { isOpen, items } = useSelector((state: RootReducer) => state.cart)
@@ -31,9 +17,8 @@ const Cart = () => {
   const [cartDetails, setCartDetails] = useState(false)
   const [payments, setPayments] = useState(false)
   const [order, setOrder] = useState(false)
-  const [orderId, setOrderId] = useState('')
 
-  const [purchase, { isLoading, isError, data }] = usePurchaseMutation()
+  const [purchase, { data }] = usePurchaseMutation()
 
   const dispatch = useDispatch()
 
@@ -161,30 +146,30 @@ const Cart = () => {
   }
 
   return (
-    <CartContent className={isOpen ? 'is-open' : ''}>
+    <S.CartContent className={isOpen ? 'is-open' : ''}>
       <div onClick={closeCart} className="overlayCart"></div>
-      <Container>
+      <S.Container>
         {items.length === 0 ? (
           <p className="empty">Carrinho Vazio</p>
         ) : (
           <>
-            <CartDetails className={cartDetails ? 'is-closed' : ''}>
-              <PratosList>
+            <S.CartDetails className={cartDetails ? 'is-closed' : ''}>
+              <S.PratosList>
                 {items.map((item) => (
-                  <Prato key={item.id}>
+                  <S.Prato key={item.id}>
                     <img src={item.foto} alt="" />
                     <div>
                       <h3>{item.nome}</h3>
                       <span>{formatPrice(item.preco)}</span>
                     </div>
                     <button onClick={() => dispatch(remove(item.id))}></button>
-                  </Prato>
+                  </S.Prato>
                 ))}
-              </PratosList>
-              <Prices>
+              </S.PratosList>
+              <S.Prices>
                 <p>Valor total</p>
                 <span>{formatPrice(getTotal())}</span>
-              </Prices>
+              </S.Prices>
               <button
                 type="button"
                 onClick={() => {
@@ -194,14 +179,14 @@ const Cart = () => {
               >
                 Continuar com a entrega
               </button>
-            </CartDetails>
-            <Delivery>
-              <Form onSubmit={form.handleSubmit}>
-                <DeliveryDetails
+            </S.CartDetails>
+            <S.Delivery>
+              <S.Form onSubmit={form.handleSubmit}>
+                <S.DeliveryDetails
                   className={deliveryDetails ? 'is-visible' : ''}
                 >
                   <h2>Entrega</h2>
-                  <InputGroup>
+                  <S.InputGroup>
                     <label htmlFor="fullName">Quem irá receber</label>
                     <input
                       id="fullName"
@@ -212,8 +197,8 @@ const Cart = () => {
                       onChange={form.handleChange}
                       className={checkInputHasError('fullName') ? 'error' : ''}
                     />
-                  </InputGroup>
-                  <InputGroup className="margin-top">
+                  </S.InputGroup>
+                  <S.InputGroup className="margin-top">
                     <label htmlFor="address">Endereço</label>
                     <input
                       id="address"
@@ -224,8 +209,8 @@ const Cart = () => {
                       onChange={form.handleChange}
                       className={checkInputHasError('address') ? 'error' : ''}
                     />
-                  </InputGroup>
-                  <InputGroup className="margin-top">
+                  </S.InputGroup>
+                  <S.InputGroup className="margin-top">
                     <label htmlFor="city">Cidade</label>
                     <input
                       id="city"
@@ -235,9 +220,9 @@ const Cart = () => {
                       onChange={form.handleChange}
                       className={checkInputHasError('city') ? 'error' : ''}
                     />
-                  </InputGroup>
+                  </S.InputGroup>
                   <div className="display-flex margin-top">
-                    <InputGroup>
+                    <S.InputGroup>
                       <label htmlFor="cep">CEP</label>
                       <InputMask
                         id="cep"
@@ -248,8 +233,8 @@ const Cart = () => {
                         onChange={form.handleChange}
                         className={checkInputHasError('cep') ? 'error' : ''}
                       />
-                    </InputGroup>
-                    <InputGroup>
+                    </S.InputGroup>
+                    <S.InputGroup>
                       <label htmlFor="number">Número</label>
                       <input
                         id="number"
@@ -259,9 +244,9 @@ const Cart = () => {
                         onChange={form.handleChange}
                         className={checkInputHasError('number') ? 'error' : ''}
                       />
-                    </InputGroup>
+                    </S.InputGroup>
                   </div>
-                  <InputGroup className="margin-top">
+                  <S.InputGroup className="margin-top">
                     <label htmlFor="complement">Complemento (opcional)</label>
                     <input
                       id="complement"
@@ -273,8 +258,8 @@ const Cart = () => {
                         checkInputHasError('complement') ? 'error' : ''
                       }
                     />
-                  </InputGroup>
-                  <ButtonsGroup>
+                  </S.InputGroup>
+                  <S.ButtonsGroup>
                     <button
                       type="button"
                       className="margin-top"
@@ -292,14 +277,14 @@ const Cart = () => {
                     >
                       Voltar para o carrinho
                     </button>
-                  </ButtonsGroup>
-                </DeliveryDetails>
-                <Payment className={payments ? 'is-visible' : ''}>
+                  </S.ButtonsGroup>
+                </S.DeliveryDetails>
+                <S.Payment className={payments ? 'is-visible' : ''}>
                   <h2>
                     Pagamento - Valor a pagar{' '}
                     <span>{formatPrice(getTotal())}</span>
                   </h2>
-                  <InputGroup>
+                  <S.InputGroup>
                     <label htmlFor="displayCardName">Nome no cartão</label>
                     <input
                       id="displayCardName"
@@ -311,9 +296,9 @@ const Cart = () => {
                         checkInputHasError('displayCardName') ? 'error' : ''
                       }
                     />
-                  </InputGroup>
+                  </S.InputGroup>
                   <div className="display-flex margin-top">
-                    <InputGroup>
+                    <S.InputGroup>
                       <label htmlFor="cardNumber">Número do cartão</label>
                       <InputMask
                         id="cardNumber"
@@ -326,8 +311,8 @@ const Cart = () => {
                           checkInputHasError('cardNumber') ? 'error' : ''
                         }
                       />
-                    </InputGroup>
-                    <InputGroup>
+                    </S.InputGroup>
+                    <S.InputGroup>
                       <label htmlFor="cardCode">CVV</label>
                       <InputMask
                         id="cardCode"
@@ -340,10 +325,10 @@ const Cart = () => {
                           checkInputHasError('cardCode') ? 'error' : ''
                         }
                       />
-                    </InputGroup>
+                    </S.InputGroup>
                   </div>
                   <div className="display-flex margin-top">
-                    <InputGroup>
+                    <S.InputGroup>
                       <label htmlFor="expiresMonth">Mês de vencimento</label>
                       <InputMask
                         id="expiresMonth"
@@ -356,8 +341,8 @@ const Cart = () => {
                           checkInputHasError('expiresMonth') ? 'error' : ''
                         }
                       />
-                    </InputGroup>
-                    <InputGroup>
+                    </S.InputGroup>
+                    <S.InputGroup>
                       <label htmlFor="expiresYear">Ano de vencimento</label>
                       <InputMask
                         id="expiresYear"
@@ -370,9 +355,9 @@ const Cart = () => {
                           checkInputHasError('expiresYear') ? 'error' : ''
                         }
                       />
-                    </InputGroup>
+                    </S.InputGroup>
                   </div>
-                  <ButtonsGroup>
+                  <S.ButtonsGroup>
                     <button type="submit" onClick={goToCheckout}>
                       Finalizar pagamento
                     </button>
@@ -387,10 +372,10 @@ const Cart = () => {
                     >
                       Voltar para a edição de endereço
                     </button>
-                  </ButtonsGroup>
-                </Payment>
-              </Form>
-              <OrderConfimation className={order ? 'is-visible' : ''}>
+                  </S.ButtonsGroup>
+                </S.Payment>
+              </S.Form>
+              <S.OrderConfimation className={order ? 'is-visible' : ''}>
                 <h2>
                   Pedido realizado - <span>{data?.orderId}</span>
                 </h2>
@@ -415,12 +400,12 @@ const Cart = () => {
                 <button type="button" onClick={clearCart}>
                   Concluir
                 </button>
-              </OrderConfimation>
-            </Delivery>
+              </S.OrderConfimation>
+            </S.Delivery>
           </>
         )}
-      </Container>
-    </CartContent>
+      </S.Container>
+    </S.CartContent>
   )
 }
 

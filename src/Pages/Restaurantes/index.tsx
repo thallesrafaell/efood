@@ -1,7 +1,9 @@
 import { useParams } from 'react-router-dom'
+
 import Banner from '../../components/Banner'
 import HeaderPerfil from '../../components/HeaderPerfil'
 import Cardapio from '../../constainers/Cardapio'
+
 import { useGetFeturedRestaurantQuery } from '../../service/api'
 
 const Restaurantes = () => {
