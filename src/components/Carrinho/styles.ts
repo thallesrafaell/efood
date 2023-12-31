@@ -55,6 +55,8 @@ export const PratosList = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 16px;
+  max-height: 80vh;
+  overflow-y: auto;
 `
 
 export const Prato = styled.li`

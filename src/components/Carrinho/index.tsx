@@ -143,6 +143,7 @@ const Cart = () => {
     dispatch(close())
     setOrder(false)
     setCartDetails(false)
+    form.resetForm()
   }
 
   return (

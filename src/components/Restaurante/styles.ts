@@ -68,6 +68,7 @@ export const Tag = styled.div`
   font-size: 12px;
   font-weight: bold;
   text-align: center;
+  text-transform: capitalize;
 `
 
 export const Infos = styled.div`

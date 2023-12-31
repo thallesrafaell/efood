@@ -27,6 +27,7 @@ export const ContainerBanner = styled(Container)`
   p {
     font-weight: 100;
     margin-bottom: 124px;
+    text-transform: capitalize;
   }
 
   h2 {

@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { v4 as uuidv4 } from 'uuid'
 
 import { MenuItem } from '../../Pages/Home'
 
@@ -11,12 +12,16 @@ const initialState: CartState = {
   isOpen: false
 }
 
+let nextId = 1
+
 const CartSlice = createSlice({
   name: 'cart',
   initialState,
   reducers: {
     add: (state, action: PayloadAction<MenuItem>) => {
-      state.items.push(action.payload)
+      const uniqueId = uuidv4()
+      state.items = [...state.items, { ...action.payload, id: nextId++ }]
+      console.log(state.items)
     },
     remove: (state, action: PayloadAction<number>) => {
       state.items = state.items.filter((item) => item.id !== action.payload)
