@@ -1,5 +1,4 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { v4 as uuidv4 } from 'uuid'
 
 import { MenuItem } from '../../Pages/Home'
 
@@ -19,7 +18,6 @@ const CartSlice = createSlice({
   initialState,
   reducers: {
     add: (state, action: PayloadAction<MenuItem>) => {
-      const uniqueId = uuidv4()
       state.items = [...state.items, { ...action.payload, id: nextId++ }]
       console.log(state.items)
     },
